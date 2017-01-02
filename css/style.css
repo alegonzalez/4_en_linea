@@ -1,9 +1,11 @@
 .panel {
   background: burlywood;
   width: 40%;
-  height: 386px;
+  height: 438px;
   margin-left: 30%;
   margin-top: 8%;
+  cursor:pointer;
+
 }
 .btn {
   width: 12%;
@@ -12,10 +14,12 @@
   background: white;
   border-color: antiquewhite;
   margin: 2px;
+  margin-top: -4px;
   margin-left: 1%;
   left: 13px;
   position: relative;
-  top: 18px;
+  top: 77px;
+  display: -webkit-inline-box;
 }
 input {
   display: block;
@@ -73,4 +77,18 @@ input[type="password"]:focus {
   text-shadow:0px 1px 1px rgba(0,0,0,.65);
   -webkit-transition: all 0.40s ease-out;
   transition: all 0.40s ease-out;
+}
+#playerTurn{
+  font-size: 20px;
+}
+hr {
+  color: white;
+  position: relative;
+  top: 75px;
+}
+#image{
+  background: green;
+  border-radius: 50%;
+  width: 12%;
+  height: 60px;
 }
