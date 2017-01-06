@@ -132,38 +132,69 @@ function getPosition(player_1,player_2){
       }
     }
   }
-  validateHorizontal(position_player2,player_2);
-  validateHorizontal(position_player1,player_1);
+  if(position_player1.length != 0 && position_player2.length != 0){
+    validateHorizontal(position_player2,player_2);
+    validateHorizontal(position_player1,player_1);
+    validateVertical(position_player2,player_2);
+    validateVertical(position_player1,player_1);
+  }
+
   position_player1 = [];
   position_player2 = [];
 }
 function validateHorizontal(position,namePlayer){
-var cont = 0;
-var last = [];
-for (var i = 0; i < position.length; i++) {
-  result = position[i].split("-");
-  position[i] = result[1] + "-" + result[0];
-}
-position = position.sort();
-for (var i = 0; i < position.length; i++) {
-  result = position[i].split("-");
-  position[i] = result[1] + "-" + result[0];
-  result = position[i].split("-");
-  if(i != 0){
-    if(result[0] -1 == last[0] && result[1] == last[1] ){
+  var cont = 0;
+  var last = [];
+  for (var i = 0; i < position.length; i++) {
+    result = position[i].split("-");
+    position[i] = result[1] + "-" + result[0];
+  }
+  position = position.sort();
+  for (var i = 0; i < position.length; i++) {
+    result = position[i].split("-");
+    position[i] = result[1] + "-" + result[0];
+    result = position[i].split("-");
+    if(i != 0){
+      if(result[0] -1 == last[0] && result[1] == last[1] ){
+        cont ++;
+      }else{
+        cont = 0;
+      }
+    }else{
       cont ++;
+    }
+    if(cont == 4){
+      alert("Gano el jugador " + namePlayer);
+      $("#image").hide(1000);
+      break;
+    }
+    last[0] = parseInt(result[0]);
+    last[1] = parseInt(result[1]);
+  }
+}
+//this function validate vertical
+function validateVertical(position,namePlayer){
+  debugger;
+
+  var array = position[0].split("-");
+  var beforeLeft = parseInt(array[0]);
+  var beforeRight = parseInt(array[1]);
+  var cont = 0;
+  for (var i = 0; i < position.length; i++) {
+    array = position[i].split("-");
+    if(beforeLeft == array[0] && beforeRight == array[1]){
+      cont ++;
+      beforeRight += 1;
     }else{
       cont = 0;
     }
-  }else{
-    cont ++;
+
+    if(cont == 4){
+      alert("Gano el jugador " + namePlayer);
+      $("#image").hide(1000);
+      break;
+
+    }
   }
-  if(cont == 4){
-    alert("Gano el jugador " + namePlayer);
-    $("#image").hide(1000);
-    break;
-  }
-  last[0] = parseInt(result[0]);
-  last[1] = parseInt(result[1]);
-}
+  console.log(position);
 }
