@@ -1,13 +1,16 @@
+body{
+  background: #448aff;
+}
 .panel {
-  background: burlywood;
+  background: #00bfa5;
   width: 40%;
   height: 438px;
   margin-left: 30%;
-  margin-top: 8%;
+  margin-top: -4%;
   cursor:pointer;
 
 }
-.btn {
+.btnGame {
   width: 12%;
   height: 55px;
   border-radius: 50%;
@@ -18,7 +21,7 @@
   margin-left: 1%;
   left: 13px;
   position: relative;
-  top: 77px;
+  top: 22px;
   display: -webkit-inline-box;
 }
 input {
@@ -39,7 +42,6 @@ input {
 input:hover,
 input:focus {
   opacity: .7;
-  color:#08c;
   border: 1px solid #08c;
   box-shadow: 0px 1px 0px rgba(255,255,255,.25),inset 0px 3px 6px rgba(0,0,0,.25);
 }
@@ -51,7 +53,7 @@ input[type="password"]:focus {
   outline: none;
 }
 
-.start {
+.start,#startWithSamePlayer,#startWithDifferentPlayer {
   display:block;
   appearance: none;
   opacity: .99;
@@ -68,27 +70,41 @@ input[type="password"]:focus {
   margin-left: 45%;
 }
 
-.start:hover {
+.start:hover,#startWithSamePlayer:hover,#startWithDifferentPlayer:hover {
   background: #08c;
   width:120px;
   border: 1px solid #0a5378;
   border-radius: 3px;
-  box-shadow: inset 0px 3px 16px rgba(0,0,0,.25),0px 1px 10px rgba(255,255,255,.5),inset 0px -1px 2px rgba(255,255,255,.35);
+  box-shadow: inset 0px 3px 16px rgb(0,0,0,.25),0px 1px 10px rgba(255,255,255,.5),inset 0px -1px 2px rgba(255,255,255,.35);
   text-shadow:0px 1px 1px rgba(0,0,0,.65);
   -webkit-transition: all 0.40s ease-out;
   transition: all 0.40s ease-out;
 }
-#playerTurn{
-  font-size: 20px;
+#playerTurn {
+  font-size: 26px;
+  position: relative;
+  top: -75px;
 }
 hr {
   color: white;
   position: relative;
-  top: 75px;
+  top: 11px;
 }
 #image{
   background: green;
   border-radius: 50%;
   width: 12%;
   height: 60px;
+}
+.gamebutton {
+  width: 317px!important;
+  margin: -84px;
+  margin-left: 40%!important;
+  margin-top: 10%;
+}
+.inputData {
+  margin-top: 7%;
+}
+center h1{
+  margin-top: 8%;
 }
